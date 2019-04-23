@@ -15,7 +15,8 @@
 
 
 ver=0.1
-move= cd .. && mv ./Boston ~/.icons
+folder=$(pwd)
+move= cd .. && cp -rf $folder ~/.icons && rm -rf $folder
 setBoston= gsettings set org.gnome.desktop.interface icon-theme 'Boston'
 
 blueb='\033[01;44m' #Blue backgroud & bold
@@ -23,18 +24,28 @@ geen='\033[0;32m' #Green font
 bold='\033[1m' #Bold font
 reset='\033[0m' #Reset font
 
-function ok {
+function title {
 	echo ""
 	echo ""
 	echo -e "${blueb}                      ${reset}"	
 	echo -e "${blueb}  BOSTON - INSTALLER  ${reset} | v$ver"
 	echo -e "${blueb}                      ${reset}"
 	echo ""
+}
+
+function ok {
+	echo ""
 	echo -e "* Changes applied: files moved and setting up the icon theme on your desktop."
 	echo -e "${geen}* Boston Icons are ready to use. Enjoy!${reset}"
 	echo ""
 	echo ""
 }
+
+#------------------------------------------
+
+title
+
+echo "Hi, $USER"
 
 if [ -d ~/.icons ];
 then
