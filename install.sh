@@ -5,11 +5,12 @@
 # Requirements:		GNOME desktop
 # Author :		Chris D
 # eMail :		christiandiaz.design@gmail.com
+# License :		BSD - 2 Clause
 # ---------------------------------------------------------------------------------------
 
-# This bash script must be run into downloaded Boston Icons directory.
-# To give permissions (if is neccessary): chmod +x ./install.sh
-# Open a terminal on it and run ./install.sh
+# This bash script must be run into downloaded Boston Icons directory. Open a terminal on it.
+# To give permissions: chmod +x ./install.sh
+# Run with: ./install.sh
 # Double click can run it without command prompt, but this method doesn't show any message.
 
 
