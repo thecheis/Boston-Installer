@@ -13,3 +13,9 @@
 * Run with: `./install.sh`
 
 * Double click can run it without command prompt, but this method doesn't show any message.
+
+***
+
+### License
+
+This script is licensed under [BSD 2 Clause](https://github.com/heychrisd/Boston-Installer/blob/master/LICENSE)
