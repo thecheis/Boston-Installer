@@ -5,6 +5,7 @@
 # Requirements:		GNOME desktop
 # Author :		Chris D
 # eMail :		christiandiaz.design@gmail.com
+# Website:		github.com/heychrisd/Boston-Installer
 # License :		BSD - 2 Clause
 # ---------------------------------------------------------------------------------------
 
@@ -13,6 +14,8 @@
 # Run with: ./install.sh
 # Double click can run it without command prompt, but this method doesn't show any message.
 
+
+# --------------------------------------DEFINITIONS--------------------------------------
 
 ver=0.1
 folder=$(pwd)
@@ -35,14 +38,15 @@ function title {
 
 function ok {
 	echo ""
-	echo -e "* Changes applied: files moved and setting up the icon theme on your desktop."
+	echo -e "* Changes applied: files moved and setting up the icon theme on your GNOME desktop."
 	echo -e "${geen}* Boston Icons are ready to use. Enjoy!${reset}"
 	echo ""
 	echo ""
 }
 
-#------------------------------------------
+# ------------------------------------------RUN------------------------------------------
 
+clear
 title
 
 echo "Hi, $USER"
