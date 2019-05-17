@@ -18,41 +18,52 @@
 
 ver=0.1
 
-blueb='\033[01;44m' #Blue background & bold
-green='\033[0;32m' #Green font
+redback='\033[1;101m' #Red background
+green='\033[1;32m' #Green font
 bold='\033[1m' #Bold font
 reset='\033[0m' #Reset font
 
 function title {
 	echo ""
 	echo ""
-	echo -e "${blueb}                      ${reset}"	
-	echo -e "${blueb}  BOSTON - INSTALLER  ${reset} | v$ver"
-	echo -e "${blueb}                      ${reset}"
+	echo -e " ===================="	
+	echo -e " $bold BOSTON - INSTALLER $reset | v$ver"
+	echo -e " ===================="
+	echo ""
+}
+
+function notFound {
+	echo ""
+	echo -e " $redback ERROR.$reset Please run the script from Boston directory."
+	echo ""
 	echo ""
 }
 
 function ok {
 	echo ""
-	echo -e "* Changes applied: files moved and setting up the icon theme on your GNOME desktop."
-	echo -e "${green}* Boston Icons are ready to use. Enjoy!${reset}"
+	echo -e "$green Changes applied. $reset"
+	echo " Files copied and setting up the icon theme on your GNOME desktop."
+	echo ""
+	echo -e " Boston Icons are ready to use. Enjoy!"
 	echo ""
 	echo ""
 }
 
 # ------------------------------------------RUN------------------------------------------
 
+clear
 title
 
-echo "Hi, $USER"
+echo " Hi, $USER"
 
 if [ ${PWD##*/} != "Boston" ]; then
-  echo "Please run the script from the Boston/ directory"
+  notFound
   exit 1
 fi
 
-mkdir -p ~/.icons/Boston
-cp -r /* ~/.icons/Boston/
+mkdir -p ~/.icons/Boston/
+rm -r ~/.icons/Boston/*
+cp -r * ~/.icons/Boston/
 
 gsettings set org.gnome.desktop.interface icon-theme 'Boston'
 
