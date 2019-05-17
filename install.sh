@@ -2,7 +2,7 @@
 
 # ---------------------------------------------------------------------------------------
 # Description :		Install Boston icon theme and set it as default theme (user mode)
-# Requirements:		GNOME desktop
+# Requirements:		GNOME 3.x desktop
 # Author :		Chris D
 # eMail :		christiandiaz.design@gmail.com
 # Website:		github.com/heychrisd/Boston-Installer
@@ -14,16 +14,12 @@
 # Run with: ./install.sh
 # Double click can run it without command prompt, but this method doesn't show any message.
 
-
 # --------------------------------------DEFINITIONS--------------------------------------
 
 ver=0.1
-folder=$(pwd)
-move= cd .. && cp -rf $folder ~/.icons && rm -rf $folder
-setBoston= gsettings set org.gnome.desktop.interface icon-theme 'Boston'
 
-blueb='\033[01;44m' #Blue backgroud & bold
-geen='\033[0;32m' #Green font
+blueb='\033[01;44m' #Blue background & bold
+green='\033[0;32m' #Green font
 bold='\033[1m' #Bold font
 reset='\033[0m' #Reset font
 
@@ -39,27 +35,28 @@ function title {
 function ok {
 	echo ""
 	echo -e "* Changes applied: files moved and setting up the icon theme on your GNOME desktop."
-	echo -e "${geen}* Boston Icons are ready to use. Enjoy!${reset}"
+	echo -e "${green}* Boston Icons are ready to use. Enjoy!${reset}"
 	echo ""
 	echo ""
 }
 
 # ------------------------------------------RUN------------------------------------------
 
-clear
 title
 
 echo "Hi, $USER"
 
-if [ -d ~/.icons ];
-then
-	$move
-	$setBoston
-	ok
-else
-	mkdir ~/.icons && $move
-	$setBoston 
-	ok
+if [ ${PWD##*/} != "Boston" ]; then
+  echo "Please run the script from the Boston/ directory"
+  exit 1
 fi
 
+mkdir -p ~/.icons/Boston
+cp -r /* ~/.icons/Boston/
+
+gsettings set org.gnome.desktop.interface icon-theme 'Boston'
+
+ok
+
 exit
+
