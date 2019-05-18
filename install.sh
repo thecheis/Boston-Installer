@@ -56,7 +56,7 @@ title
 
 echo " Hi, $USER"
 
-if [ $DESKTOP_SESSION != "kde" ]; then
+if [ $DESKTOP_SESSION != "gnome" ]; then
   echo ""
   echo -e " $redback Warning $reset GNOME isn't your desktop session. Icon theme change will not apply."
   echo " You must change it manually using desktop settings."
