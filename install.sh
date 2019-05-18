@@ -56,15 +56,15 @@ title
 
 echo " Hi, $USER"
 
+if [ ${PWD##*/} != "Boston" ]; then
+  notFound
+  exit 1
+fi
+
 if [ $DESKTOP_SESSION != "gnome" ]; then
   echo ""
   echo -e " $redback Warning $reset GNOME isn't your desktop session. Icon theme change will not apply."
   echo " You must change it manually using desktop settings."
-fi
-
-if [ ${PWD##*/} != "Boston" ]; then
-  notFound
-  exit 1
 fi
 
 mkdir -p ~/.icons/Boston/
