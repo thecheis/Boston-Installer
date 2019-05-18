@@ -34,7 +34,7 @@ function title {
 
 function notFound {
 	echo ""
-	echo -e " $redback ERROR.$reset Please run the script from Boston directory."
+	echo -e " $redback ERROR $reset Please run the script from Boston directory."
 	echo ""
 	echo ""
 }
@@ -55,6 +55,12 @@ clear
 title
 
 echo " Hi, $USER"
+
+if [ $DESKTOP_SESSION != "kde" ]; then
+  echo ""
+  echo -e " $redback Warning $reset GNOME isn't your desktop session. Icon theme change will not apply."
+  echo " You must change it manually using desktop settings."
+fi
 
 if [ ${PWD##*/} != "Boston" ]; then
   notFound
