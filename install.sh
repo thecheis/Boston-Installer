@@ -23,6 +23,8 @@ green='\033[1;32m' #Green font
 bold='\033[1m' #Bold font
 reset='\033[0m' #Reset font
 
+# ----------------------------------------TEXTS------------------------------------------
+
 function title {
 	echo ""
 	echo ""
@@ -37,6 +39,12 @@ function notFound {
 	echo -e " $redback ERROR $reset Please run the script from Boston directory."
 	echo ""
 	echo ""
+}
+
+function noGNOME {
+	echo ""
+	echo -e " $redback Warning $reset GNOME isn't your desktop session. Icon theme change will not apply."
+	echo " You must change it manually using desktop settings."
 }
 
 function ok {
@@ -62,9 +70,7 @@ if [ ${PWD##*/} != "Boston" ]; then
 fi
 
 if [ $DESKTOP_SESSION != "gnome" ]; then
-  echo ""
-  echo -e " $redback Warning $reset GNOME isn't your desktop session. Icon theme change will not apply."
-  echo " You must change it manually using desktop settings."
+  noGNOME
 fi
 
 mkdir -p ~/.icons/Boston/
