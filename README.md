@@ -1,5 +1,5 @@
 # ⬇️ Boston Installer
-[Boston Icons](https://www.opendesktop.org/p/1012402/) command line installer, using bash scripting.
+[Boston Icons](https://www.opendesktop.org/p/1012402/) command line installer, using bash scripting. GNOME 3.x desktop is required for final setup.
 
 ![Boston Installer screenshot](https://github.com/heychrisd/Boston-Installer/blob/master/screenshot.png)
 
