@@ -1,12 +1,12 @@
 #!/bin/bash 
 
 # ---------------------------------------------------------------------------------------
-# Description :		Install Boston icon theme and set it as default theme (user mode)
-# Requirements:		GNOME 3.x desktop
-# Author :		Chris D
+# Description :	Install Boston icon theme and set it as default theme (user mode)
+# Requirements:	GNOME 3.x desktop
+# Author :		Christian Díaz
 # eMail :		christiandiaz.design@gmail.com
 # Website:		github.com/heychrisd/Boston-Installer
-# License :		BSD - 2 Clause
+# License :		MIT
 # ---------------------------------------------------------------------------------------
 
 # This bash script must be run into downloaded Boston Icons directory. Open a terminal on it.
