@@ -18,4 +18,4 @@
 
 ### License
 
-This script is licensed under [BSD 2 Clause](https://github.com/heychrisd/Boston-Installer/blob/master/LICENSE)
+This script is licensed under [MIT license](https://github.com/heychrisd/Boston-Installer/blob/master/LICENSE)
