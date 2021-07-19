@@ -4,7 +4,7 @@
 ![Boston Installer screenshot](https://github.com/heychrisd/Boston-Installer/blob/master/screenshot.png)
 
 
-### Notes and how to use
+### How to use
 
 * This bash script must be run into downloaded Boston Icons directory. Open a terminal on it.
 
@@ -13,9 +13,3 @@
 * Run with: `./install.sh`
 
 * Double click can run it without command prompt, but this method doesn't show any message.
-
-***
-
-### License
-
-This script is licensed under [MIT license](https://github.com/heychrisd/Boston-Installer/blob/master/LICENSE)
