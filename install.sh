@@ -65,10 +65,10 @@ title
 
 echo " Hi, $USER"
 
-#if [ ${PWD##*/} != "Boston" ]; then
-#  notFound
-#  exit 1
-#fi
+if [ ${PWD##*/} != "Boston" ]; then
+  notFound
+  exit 1
+fi
 
 if [ $DESKTOP_SESSION != "gnome" ]; then
   noGNOME
