@@ -10,13 +10,14 @@
 # ---------------------------------------------------------------------------------------
 
 # This bash script must be run into downloaded Boston Icons directory. Open a terminal on it.
-# To give permissions: chmod +x ./install.sh
 # Run with: ./install.sh
 # Double click can run it without command prompt, but this method doesn't show any message.
 
+set -e
+
 # --------------------------------------DEFINITIONS--------------------------------------
 
-ver=0.1
+ver=0.1.1
 
 redback='\033[1;101m' #Red background
 green='\033[1;32m' #Green font
@@ -73,9 +74,19 @@ if [ $DESKTOP_SESSION != "gnome" ]; then
   noGNOME
 fi
 
-mkdir -p ~/.icons/Boston/
-rm -r ~/.icons/Boston/*
-cp -r * ~/.icons/Boston/
+boston_dir="$HOME/.icons/Boston"
+mkdir -p "${boston_dir}"
+
+# Remove contents of output directory, if any
+shopt -s nullglob dotglob  # Set to include hidden files
+files=$(echo "${boston_dir}"/*)
+if (( ${#files} )); then
+  rm -r "${boston_dir}"/*
+fi
+shopt -u nullglob dotglob  # Unset to go back to normal
+
+# Copy theme to output folder
+cp -r * "${boston_dir}"
 
 gsettings set org.gnome.desktop.interface icon-theme 'Boston'
 
