@@ -10,13 +10,14 @@
 # ---------------------------------------------------------------------------------------
 
 # This bash script must be run into downloaded Boston Icons directory. Open a terminal on it.
-# To give permissions: chmod +x ./install.sh
 # Run with: ./install.sh
 # Double click can run it without command prompt, but this method doesn't show any message.
 
+set -e
+
 # --------------------------------------DEFINITIONS--------------------------------------
 
-ver=0.1
+ver=0.1.1
 
 redback='\033[1;101m' #Red background
 green='\033[1;32m' #Green font
