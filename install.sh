@@ -65,18 +65,28 @@ title
 
 echo " Hi, $USER"
 
-if [ ${PWD##*/} != "Boston" ]; then
-  notFound
-  exit 1
-fi
+#if [ ${PWD##*/} != "Boston" ]; then
+#  notFound
+#  exit 1
+#fi
 
 if [ $DESKTOP_SESSION != "gnome" ]; then
   noGNOME
 fi
 
-mkdir -p ~/.icons/Boston/
-rm -r ~/.icons/Boston/*
-cp -r * ~/.icons/Boston/
+boston_dir="$HOME/.icons/Boston"
+mkdir -p "${boston_dir}"
+
+# Remove contents of output directory, if any
+shopt -s nullglob dotglob  # Set to include hidden files
+files=$(echo "${boston_dir}"/*)
+if (( ${#files} )); then
+  rm -r "${boston_dir}"/*
+fi
+shopt -u nullglob dotglob  # Unset to go back to normal
+
+# Copy theme to output folder
+cp -r * "${boston_dir}"
 
 gsettings set org.gnome.desktop.interface icon-theme 'Boston'
 
